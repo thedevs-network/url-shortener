@@ -58,6 +58,7 @@ Your link is now: https://url.thedevs.network/D
 				body: url.value
 			}).then(res => res.text())
 			.then(id => url.value = 'https://url.thedevs.network/' + id)
+			.then(() => url.focus())
 			.then(() => url.select())
 			.then(() => document.execCommand('copy'))
 			.then(() => url.value = '')
