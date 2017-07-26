@@ -14,7 +14,7 @@ const app = express();
 app.use(bodyParser.text({ type: '*/*' }));
 
 app.get('/', (req, res) =>
-	res.sendFile(join(__dirname, 'README.md')));
+	res.sendFile(join(__dirname, 'index.html')));
 
 app.get('/:id', (req, res) =>
 	find(req.params.id).then(url => url
