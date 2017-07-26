@@ -11,7 +11,7 @@ Information
 POST to this URL with a URL of your choice as a
 request body to create a shortened link.
 
-The server will respond will the ID.
+The server will respond with the ID.
 
 Navigating to https://devs.link/ID with the given ID will redirect you to
 the link provided.
