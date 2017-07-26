@@ -4,6 +4,8 @@ const base62 = require('base62');
 const { createHash } = require('crypto');
 const Datastore = require('nedb-promise');
 
+const MINIMUM_ID_LENGTH = 1;
+
 const hash = str =>
 	createHash('sha256')
 		.update(str)
@@ -13,7 +15,7 @@ const hash = str =>
 		.replace(/=/g, '');
 
 const createIDGenerator = db =>
-	function generate(str, len = 1) {
+	function generate(str, len = MINIMUM_ID_LENGTH) {
 		const _id = str.substr(0, len);
 		return len > str.length
 			? (console.log('hash collision at', str, 'rehashing...'),
