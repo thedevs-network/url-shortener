@@ -1,6 +1,5 @@
 'use strict';
 
-const { statSync, readdirSync } = require('fs');
 const { join } = require('path');
 
 const express = require('express');

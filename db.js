@@ -35,8 +35,7 @@ const createAdder = (db, generateID) => url =>
 				? db.insert({
 					_id,
 					created: Date.now(),
-					url
-				})
+					url })
 				: null))
 		.then(doc => doc && doc._id);
 
