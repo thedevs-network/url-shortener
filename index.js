@@ -6,7 +6,7 @@ const { join } = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const validate = require('./url');
+const { validate, parse } = require('./url');
 const { find, add } = require('./db');
 
 const app = express();
@@ -23,7 +23,7 @@ app.get('/:id', (req, res) =>
 
 app.post('/', (req, res) => (url =>
 	validate(url)
-		? add(url).then(id => id
+		? add(parse(url)).then(id => id
 			? res.send(id)
 			: res.status(500).send('Server Error'))
 		: res.status(400).send('Invalid URL'))(String(req.body)));
