@@ -15,6 +15,9 @@ app.use(bodyParser.text({ type: '*/*' }));
 app.get('/', (req, res) =>
 	res.sendFile(join(__dirname, 'index.html')));
 
+app.get('/font.otf', (req, res) =>
+	res.sendFile(join(__dirname, 'texgyrecursor-regular.otf')));
+
 app.get('/:id', (req, res) =>
 	find(req.params.id).then(url => url
 		? res.redirect(url)
