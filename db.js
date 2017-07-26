@@ -29,9 +29,8 @@ const createFinder = db => _id =>
 		.then(doc => doc && doc.url);
 
 const createAdder = (db, generateID) => url =>
-	db.findOne({ url }).then(doc => doc
-		? doc._id
-		: generateID(hash(url))
+	db.findOne({ url }).then(doc =>
+		doc || generateID(hash(url))
 			.then(_id => _id
 				? db.insert({
 					_id,
