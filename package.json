@@ -21,7 +21,6 @@
   },
   "homepage": "https://github.com/TheDevs-Network/url-shortener#readme",
   "dependencies": {
-    "base62": "^1.2.0",
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "nedb-promise": "^2.0.1"

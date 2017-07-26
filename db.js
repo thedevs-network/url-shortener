@@ -1,6 +1,5 @@
 'use strict';
 
-const base62 = require('base62');
 const { createHash } = require('crypto');
 const Datastore = require('nedb-promise');
 
@@ -23,7 +22,7 @@ const createIDGenerator = db =>
 			: db.findOne({ _id }).then(doc => doc
 				? generate(str, len + 1)
 				: _id);
-	}
+	};
 
 const createFinder = db => _id =>
 	db.findOne({ _id })
@@ -34,14 +33,18 @@ const createAdder = (db, generateID) => url =>
 		? doc._id
 		: generateID(hash(url))
 			.then(_id => _id
-				? db.insert({ _id, url })
-				: null)
-			.then(doc => doc && doc._id));
+				? db.insert({
+					_id,
+					created: Date.now(),
+					url
+				})
+				: null))
+		.then(doc => doc && doc._id);
 
 
 const links = new Datastore({
-	filename: 'links.db',
-	autoload: true
+	autoload: true,
+	filename: 'links.db'
 });
 
 links.ensureIndex({
@@ -50,6 +53,6 @@ links.ensureIndex({
 });
 
 module.exports = {
-	find: createFinder(links),
-	add: createAdder(links, createIDGenerator(links))
+	add: createAdder(links, createIDGenerator(links)),
+	find: createFinder(links)
 };
