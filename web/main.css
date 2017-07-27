@@ -1,0 +1,12 @@
+@font-face {
+	font-family: 'TeX-Gyre-Cursor';
+	src: url('/fonts/TeX-Gyre-Cursor.otf');
+}
+body, pre {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%);
+	background-color: #151515;
+	color: white;
+	font-family: 'TeX-Gyre-Cursor';
+}

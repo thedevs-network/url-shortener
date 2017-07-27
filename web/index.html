@@ -1,20 +1,9 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<style>
-			@font-face {
-				font-family: 'TeX-Gyre-Cursor';
-				src: url('/fonts/TeX-Gyre-Cursor.otf');
-			}
-			body, pre {
-				position: absolute;
-				left: 50%;
-				transform: translate(-50%);
-				background-color: #151515;
-				color: white;
-				font-family: 'TeX-Gyre-Cursor';
-			}
-		</style>
+		<meta charset="UTF-8" />
+		<title>URL shortener</title>
+		<link rel="stylesheet" type="text/css" href="/main.css" />
 	</head>
 	<body>
 <pre>
@@ -50,14 +39,5 @@ Your link is now: https://url.thedevs.network/D
 <button id="shorten">Shorten URL!</button>
 </pre>
 	</body>
-	<script>
-		shorten.addEventListener('click', () => 
-			fetch('/', {
-				method: 'POST',
-				body: url.value
-			}).then(res => res.text())
-			.then(id => url.value = 'https://url.thedevs.network/' + id)
-			.then(val => prompt('Ctrl+C', val))
-			.catch(err => alert(err.name + ': ' + err.message)));
-	</script>
+	<script type="application/javascript" src="/app.js"></script>
 </html>
