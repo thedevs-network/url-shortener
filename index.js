@@ -1,7 +1,5 @@
 'use strict';
 
-const { join } = require('path');
-
 const express = require('express');
 const bodyParser = require('body-parser');
 
@@ -12,11 +10,7 @@ const app = express();
 
 app.use(bodyParser.text({ type: '*/*' }));
 
-app.get('/', (req, res) =>
-	res.sendFile(join(__dirname, 'index.html')));
-
-app.get('/font.otf', (req, res) =>
-	res.sendFile(join(__dirname, 'texgyrecursor-regular.otf')));
+app.use(express.static('web'));
 
 app.get('/:id', (req, res) =>
 	find(req.params.id).then(url => url

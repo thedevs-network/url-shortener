@@ -13,15 +13,15 @@ request body to create a shortened link.
 
 The server will respond with the ID.
 
-Navigating to https://devs.link/ID with the given ID will redirect you to
-the link provided.
+Navigating to https://url.thedevs.network/ID with the
+given ID will redirect you to the link provided.
 
 Code examples
 -------------
 
 ### curl
 
-	curl -d "https://example.com/" https://devs.link
+	curl -d "https://example.com/" https://url.thedevs.network
 	D
 
-Your link is now: https://devs.link/D
+Your link is now: https://url.thedevs.network/D
