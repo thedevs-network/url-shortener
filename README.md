@@ -24,6 +24,14 @@ Code examples
 
 ### Clientside JavaScript
 
+	fetch('https://url.thedevs.network/', {
+		body: 'https://example.com/',
+		method: 'POST' }).then(res => res.text())
+		.then(id => console.log(id));
 
+### Node.js
+
+	axios.post('https://url.thedevs.network/', "https://example.com/")
+		.then(id => console.log(id));
 
 Your link is now: https://url.thedevs.network/D
