@@ -25,6 +25,7 @@ submit.addEventListener('click', () =>
 				'Server Error'
 			].includes(val))
 				throw Error(val);
+			return val;
 		})
 		.then(val => showShortenedURL(val))
 		.catch(err => alert(err.name + ': ' + err.message)));
