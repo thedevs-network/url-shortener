@@ -3,7 +3,13 @@
 	src: url('/fonts/TeX-Gyre-Cursor.otf');
 }
 
-body, input, button {
+html, body {
+	height: 100%;
+	margin: 0;
+	overflow-y: hidden;
+}
+
+body, input, button, p {
 	background-color: #151515;
 	color: white;
 	font-family: 'TeX-Gyre-Cursor';
@@ -39,9 +45,37 @@ button {
 	-ms-transition: all 200ms ease-in-out;
 	-o-transition: all 200ms ease-in-out;
 	transition: all 200ms ease-in-out;
+	min-width: 100px;
 }
 
 button:hover {
 	color: #151515;
 	background: #e3e3e3;
+}
+
+#show_url {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0, 0.6);
+	text-align: center;
+	padding: 200px 0;
+}
+
+#show_url p {
+	padding: 50px;
+	max-width: 500px;
+	background: #e3e3e3;
+	color: #151515;
+	text-align: center;
+	text-align: center;
+    font-size: 22px;
+	margin: 50px auto;
+}
+
+.visible {
+	display: block !important;
 }

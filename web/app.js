@@ -2,6 +2,16 @@
 
 const input = document.getElementById('input_url');
 const submit = document.getElementById('submit_url');
+const modal = document.getElementById('show_url');
+const close = document.getElementById('close_dialog');
+
+function showShortenedURL(value) {
+	const modalChild = modal.firstChild;
+	modalChild.innerHTML = `
+		${location.href + value}
+	`;
+	modal.classList.add('visible');
+}
 
 submit.addEventListener('click', () =>
 	fetch('/', {
@@ -16,5 +26,9 @@ submit.addEventListener('click', () =>
 			].includes(val))
 				throw Error(val);
 		})
-		.then(val => prompt('Ctrl+C', location.href + val))
+		.then(val => showShortenedURL(val))
 		.catch(err => alert(err.name + ': ' + err.message)));
+
+close.addEventListener('click', () => {
+	modal.classList.remove('visible');
+});
