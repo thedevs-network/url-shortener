@@ -15,6 +15,7 @@ submit.addEventListener('click', () =>
 				'Server Error'
 			].includes(val))
 				throw Error(val);
+			return val;
 		})
 		.then(val => prompt('Ctrl+C', location.href + val))
 		.catch(err => alert(err.name + ': ' + err.message)));
