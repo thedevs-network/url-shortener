@@ -3,6 +3,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
+require('./generateMarkup');
+
 const { validate, parse } = require('./url');
 const { find, add } = require('./db');
 
