@@ -1,0 +1,35 @@
+@font-face {
+	font-family: 'TeX-Gyre-Cursor';
+	src: url('/fonts/TeX-Gyre-Cursor.otf');
+}
+
+body, input, button {
+	background-color: #151515;
+	color: white;
+	font-family: 'TeX-Gyre-Cursor';
+}
+
+pre {
+	color: gray;
+	padding-left: 36px;
+}
+
+input[type='text'] {
+    background: transparent;
+    border:  none;
+    border-bottom: 2px solid #e3e3e3;
+    line-height: 30px;
+    border-radius: 2px;
+    color: #e3e3e3;
+    padding: 5px;
+	font-size: 16px;
+	margin-right: 10px;
+}
+
+button {
+    background: transparent;
+    line-height: 30px;
+    padding: 5px 10px;
+    border: 2px solid #e3e3e3;
+    cursor: pointer;
+}
