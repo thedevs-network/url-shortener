@@ -9,6 +9,8 @@ body, input, button {
 	font-family: 'TeX-Gyre-Cursor';
 }
 
+textarea, input, button { outline: none; }
+
 pre {
 	color: gray;
 	padding-left: 36px;
@@ -31,5 +33,15 @@ button {
     line-height: 30px;
     padding: 5px 10px;
     border: 2px solid #e3e3e3;
-    cursor: pointer;
+	cursor: pointer;
+	-webkit-transition: all 200ms ease-in-out;
+	-moz-transition: all 200ms ease-in-out;
+	-ms-transition: all 200ms ease-in-out;
+	-o-transition: all 200ms ease-in-out;
+	transition: all 200ms ease-in-out;
+}
+
+button:hover {
+	color: #151515;
+	background: #e3e3e3;
 }
