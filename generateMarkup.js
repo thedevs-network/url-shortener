@@ -11,7 +11,7 @@ const markup = new HtmlRenderer().render(
 
 writeFileSync('web/index.html', compile(readFileSync('web/index.pug', 'utf8'), {
 	filters: {
-		commonmark () {
+		commonmark() {
 			return markup;
 		}
 	}

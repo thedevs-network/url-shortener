@@ -13,9 +13,8 @@ submit.addEventListener('click', () =>
 			if ([
 				'Invalid URL',
 				'Server Error'
-			].includes(val)) {
+			].includes(val))
 				throw Error(val);
-			}
 		})
 		.then(val => prompt('Ctrl+C', location.href + val))
 		.catch(err => alert(err.name + ': ' + err.message)));
