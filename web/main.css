@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @font-face {
 	font-family: 'TeX-Gyre-Cursor';
 	src: url('/fonts/TeX-Gyre-Cursor.otf');
@@ -33,3 +34,20 @@ button {
     border: 2px solid #e3e3e3;
     cursor: pointer;
 }
+=======
+@font-face {
+	font-family: 'TeX-Gyre-Cursor';
+	src: url('/fonts/TeX-Gyre-Cursor.otf');
+}
+
+body {
+	background-color: #151515;
+	color: white;
+	font-family: 'TeX-Gyre-Cursor';
+}
+
+pre {
+	color: gray;
+	padding-left: 36px;
+}
+>>>>>>> 134ab509f996b140d12b328c214bb2309d66deb4

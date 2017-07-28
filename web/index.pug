@@ -1,0 +1,13 @@
+doctype html
+html
+	head
+		meta(charset='UTF-8')/
+		meta(name='viewport' content='width=device-width, initial-scale=1, user-scalable=no')/
+		title URL shortener
+		link(rel='stylesheet' type='text/css' href='/main.css')/
+	body
+		article
+			:commonmark
+		input(type='text' id='input_url')
+		button(id='submit_url') Shorten
+		script(type='application/javascript' src='/app.js')

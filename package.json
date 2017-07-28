@@ -1,0 +1,30 @@
+{
+  "name": "url-shortener",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheDevs-Network/url-shortener.git"
+  },
+  "keywords": [
+    "url",
+    "shortener"
+  ],
+  "author": "Thomas Rory Gummerson <thomas@gummerson.no> (https://trgwii.no)",
+  "license": "Beerware",
+  "bugs": {
+    "url": "https://github.com/TheDevs-Network/url-shortener/issues"
+  },
+  "homepage": "https://github.com/TheDevs-Network/url-shortener#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "commonmark": "^0.27.0",
+    "express": "^4.15.3",
+    "nedb-promise": "^2.0.1",
+    "pug": "^2.0.0-rc.2"
+  }
+}
