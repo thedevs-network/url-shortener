@@ -17,9 +17,13 @@ Navigating to https://url.thedevs.network/ID with the given ID will redirect you
 Code examples
 -------------
 
-### curl
+### cURL
 
 	curl -d "https://example.com/" https://url.thedevs.network
 	D
+
+### Clientside JavaScript
+
+
 
 Your link is now: https://url.thedevs.network/D
