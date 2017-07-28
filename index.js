@@ -27,7 +27,6 @@ app.post('/', (req, res) => (url =>
 			: res.status(500).send('Server Error'))
 		: res.status(400).send('Invalid URL'))(String(req.body)));
 
-app.listen(4000, '127.0.0.1', (err) => {
-	if (err) return console.log(err);
-	return console.log('Server listening on port 4000');
-});
+app.listen(4000, '127.0.0.1', (err) => err
+	? console.error(err)
+	: console.log('Server listening on port 4000'));
