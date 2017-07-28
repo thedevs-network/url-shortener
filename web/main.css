@@ -14,7 +14,7 @@ pre {
 	padding-left: 36px;
 }
 
-input[type='text'] {
+/*input[type='text'] {
     background: transparent;
     border:  none;
     border-bottom: 2px solid #e3e3e3;
@@ -24,7 +24,7 @@ input[type='text'] {
     padding: 5px;
 	font-size: 16px;
 	margin-right: 10px;
-}
+}*/
 
 button {
     background: transparent;
@@ -32,4 +32,33 @@ button {
     padding: 5px 10px;
     border: 2px solid #e3e3e3;
     cursor: pointer;
+}
+
+input#input_url  {
+    left: -1000px;
+    position: absolute;
+}
+
+.cursor {
+    font-size: 12px;
+    background-color: greenyellow;
+    color: greenyellow;
+    position: relative;
+    opacity: 1;
+}
+
+#terminal {
+    margin: 8px;
+    cursor: text;
+    height: 500px;
+    overflow: auto;
+}
+
+#writer {
+    font-family: cursor, courier;
+    font-weight: bold;
+}
+
+#input_url {
+    margin: 5px;
 }
