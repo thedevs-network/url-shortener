@@ -1,11 +1,11 @@
 'use strict';
 
-const url = document.getElementById('url');
-const shorten = document.getElementById('shorten');
+const input = document.getElementById('input_url');
+const submit = document.getElementById('submit_url');
 
-shorten.addEventListener('click', () =>
+submit.addEventListener('click', () =>
 	fetch('/', {
-		body: url.value,
+		body: input.value,
 		method: 'POST'
 	})
 		.then(res => res.text())

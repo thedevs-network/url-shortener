@@ -22,7 +22,8 @@ app.get('/:id', (req, res) =>
 app.post('/', (req, res) => (url =>
 	validate(url)
 		? add(parse(url)).then(id => id
-			? res.send(id)
+			? (res.set('Access-Control-Allow-Origin', '*'),
+				res.send(id))
 			: res.status(500).send('Server Error'))
 		: res.status(400).send('Invalid URL'))(String(req.body)));
 
