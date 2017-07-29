@@ -6,11 +6,13 @@ html
 		title URL shortener
 		link(rel='stylesheet' type='text/css' href='/main.css')/
 	body
-		article
-			:commonmark
-		input(type='text' id='input_url' placeholder='https://example.com/')
-		button(id='submit_url') Shorten
-		div(id='show_url')
-			p
-			button(id='close_dialog') Close
+		div(class='container')
+			div(class='inputContainer')
+				input(type='text' id='input_url' placeholder='https://example.com/')
+				button(id='submit_url') Shorten
+			article
+				:commonmark
+			div(id='show_url')
+				p
+				button(id='close_dialog') Close
 		script(type='application/javascript' src='/app.js')

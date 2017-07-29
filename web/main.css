@@ -6,7 +6,7 @@
 html, body {
 	height: 100%;
 	margin: 0;
-	overflow-y: hidden;
+	overflow-y: scroll;
 }
 
 body, input, button, p {
@@ -17,9 +17,16 @@ body, input, button, p {
 
 textarea, input, button { outline: none; }
 
+.container {
+	width: 1200px;
+	margin: 0 auto;
+	padding: 30px 0;
+}
+
 pre {
 	color: gray;
 	padding-left: 36px;
+	overflow-x: scroll;
 }
 
 input[type='text'] {
@@ -55,7 +62,7 @@ button:hover {
 
 #show_url {
 	display: none;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -76,6 +83,49 @@ button:hover {
 	margin: 50px auto;
 }
 
+.inputContainer {
+	text-align: center;
+	padding: 20px 0;
+}
+
 .visible {
 	display: block !important;
+}
+
+@media all and (max-width: 525px) {
+	input[type=text] {
+		margin-bottom: 10px;
+	}
+}
+
+@media all and (min-width: 961px) and (max-width: 1230px) {
+	.container {
+		width: 940px;
+	}
+}
+
+@media all and (min-width: 769px) and (max-width: 960px) {
+	.container {
+		width: 740px;
+	}
+}
+
+@media all and (min-width: 525px) and (max-width: 768px){
+	.container {
+		width: 500px;
+	}
+}
+
+@media all and (min-width: 320px) and (max-width: 524px) {
+	.container {
+		width: 300px;
+	}
+	#show_url {
+		padding: 70px 0;
+	}
+	#show_url p {
+		max-width: 300px;
+		padding: 30px 15px;
+		overflow: scroll;
+	}
 }
