@@ -9,7 +9,7 @@ const markup = new HtmlRenderer().render(
 	new Parser().parse(
 		readFileSync('README.md', 'utf8')));
 
-writeFileSync('web/index.html', compile(readFileSync('web/index.pug', 'utf8'), {
+writeFileSync('web/index.html', compile(readFileSync('index.pug', 'utf8'), {
 	filters: {
 		commonmark() {
 			return markup;
