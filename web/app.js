@@ -8,7 +8,6 @@ const close = document.getElementById('close_dialog');
 const copyBtn = new Clipboard('#copy_url');
 
 function showShortenedURL(value) {
-	urlTarget.textContent = 
 	urlTarget.textContent = location.href + value;
 	modal.classList.add('visible');
 }
