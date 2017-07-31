@@ -8,8 +8,8 @@ html
 	body
 		div(class='container')
 			div(class='inputContainer')
-				input(type='text' id='input_url' placeholder='https://example.com/')
-				button(id='submit_url') Shorten
+				input(type='text' id='input_url' placeholder='https://example.com/' onkeyup='checkIfEmpty()')
+				button(id='submit_url' disabled) Shorten
 			article
 				:commonmark
 			div(id='show_url')

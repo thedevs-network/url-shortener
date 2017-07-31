@@ -14,6 +14,13 @@ function showShortenedURL(value) {
 	modal.classList.add('visible');
 }
 
+function checkIfEmpty () {
+	const inputValue = input.value;
+	inputValue === ''
+		? submit.disabled = true
+		: submit.disabled = false;
+}
+
 submit.addEventListener('click', () =>
 	fetch('/', {
 		body: input.value,

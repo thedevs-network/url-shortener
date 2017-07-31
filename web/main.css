@@ -6,7 +6,7 @@
 html, body {
 	height: 100%;
 	margin: 0;
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 
 body, input, button, p {
@@ -60,6 +60,16 @@ button {
 button:hover {
 	color: #151515;
 	background: #e3e3e3;
+}
+
+button#submit_url:disabled {
+	color: gray;
+	border-color: gray;
+}
+
+button#submit_url:disabled:hover {
+	color: gray;
+	background: #151515;
 }
 
 #show_url {
@@ -128,6 +138,6 @@ button:hover {
 	#show_url p {
 		max-width: 300px;
 		padding: 30px 15px;
-		overflow: scroll;
+		overflow: auto;
 	}
 }
