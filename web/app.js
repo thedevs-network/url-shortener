@@ -22,19 +22,29 @@ const shorten = url => fetch('/', {
 	return val;
 });
 
+const dom = {
+	result: (str) =>
+		(result.textContent = str,
+			result.style.color = '',
+			submit.textContent = 'Copy'),
+	error: (err) =>
+		(result.textContent = err.name + ': ' + err.message,
+			result.style.color = 'red',
+			submit.textContent = 'Shorten'),
+	clear: () =>
+		(input.value = '',
+			result.textContent = '',
+			result.style.color = '',
+			submit.textContent = 'Shorten')
+};
+
 input.addEventListener('input', () =>
 	submit.disabled = input.value.trim() === '');
 
 submit.addEventListener('click', () =>
 	submit.textContent === 'Shorten'
-		? shorten(input.value).then(id =>
-			(result.textContent = location.href + id,
-				result.style.color = '',
-				submit.textContent = 'Copy'))
-			.catch(err =>
-				(result.textContent = err.name + ': ' + err.message,
-					result.style.color = 'red'))
+		? shorten(input.value)
+			.then(id => dom.result(location.href + id))
+			.catch(dom.error)
 		: (copy(result.textContent),
-			input.value = '',
-			result.textContent = '',
-			submit.textContent = 'Shorten'));
+			dom.clear()));
