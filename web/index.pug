@@ -8,13 +8,9 @@ html
 	body
 		div(class='container')
 			div(class='inputContainer')
-				input(type='text' id='input_url' placeholder='https://example.com/' onkeyup='checkIfEmpty()')
+				input(type='text' id='input_url' placeholder='https://example.com/')
 				button(id='submit_button' disabled) Shorten
+				div(id='result')
 			article
 				:commonmark
-			div(id='show_url')
-				p(id='target_url')
-				button(id='copy_url' data-clipboard-target='#target_url') Copy URL
-				button(id='close_dialog') Close
-		script(type='application/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js')
 		script(type='application/javascript' src='/app.js')
