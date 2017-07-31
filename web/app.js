@@ -49,7 +49,7 @@ const dom = {
 };
 
 input.addEventListener('input', () =>
-	input.disabled = !validate(input.value));
+	submit.disabled = !validate(input.value));
 
 submit.addEventListener('click', () =>
 	submit.textContent === 'Shorten'
