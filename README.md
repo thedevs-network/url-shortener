@@ -19,19 +19,25 @@ Code examples
 
 ### cURL
 
-	curl -d "https://example.com/" https://url.thedevs.network
+	curl -d "https://example.com/" https://url.thedevs.network/
 	D
 
 ### Clientside JavaScript
 
 	fetch('https://url.thedevs.network/', {
 		body: 'https://example.com/',
-		method: 'POST' }).then(res => res.text())
-		.then(id => console.log(id));
+		method: 'POST'
+	})
+		.then(res =>
+			res.text())
+		.then(id =>
+			console.log(id));
 
 ### Node.js
 
-	axios.post('https://url.thedevs.network/', "https://example.com/")
-		.then(id => console.log(id));
+	axios.post('https://url.thedevs.network/',
+		"https://example.com/")
+		.then(id =>
+			console.log(id));
 
-Your link is now: https://url.thedevs.network/D
+Shortening "https://example.com/" your link will be: https://url.thedevs.network/D
