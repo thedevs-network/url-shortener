@@ -62,12 +62,12 @@ button:hover {
 	background: #e3e3e3;
 }
 
-button#submit_url:disabled {
+button#submit_button:disabled {
 	color: gray;
 	border-color: gray;
 }
 
-button#submit_url:disabled:hover {
+button#submit_button:disabled:hover {
 	color: gray;
 	background: #151515;
 }

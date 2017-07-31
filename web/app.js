@@ -1,7 +1,7 @@
 'use strict';
 
 const input = document.getElementById('input_url');
-const submit = document.getElementById('submit_url');
+const submit = document.getElementById('submit_button');
 const modal = document.getElementById('show_url');
 const urlTarget = document.getElementById('target_url');
 const close = document.getElementById('close_dialog');
