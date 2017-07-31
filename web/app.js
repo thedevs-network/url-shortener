@@ -23,19 +23,19 @@ const shorten = url => fetch('/', {
 });
 
 const dom = {
-	result: (str) =>
-		(result.textContent = str,
-			result.style.color = '',
-			submit.textContent = 'Copy'),
-	error: (err) =>
-		(result.textContent = err.name + ': ' + err.message,
-			result.style.color = 'red',
-			submit.textContent = 'Shorten'),
 	clear: () =>
 		(input.value = '',
 			result.textContent = '',
 			result.style.color = '',
-			submit.textContent = 'Shorten')
+			submit.textContent = 'Shorten'),
+	error: (err) =>
+		(result.textContent = err.name + ': ' + err.message,
+			result.style.color = 'red',
+			submit.textContent = 'Shorten'),
+	result: (str) =>
+		(result.textContent = str,
+			result.style.color = '',
+			submit.textContent = 'Copy')
 };
 
 input.addEventListener('input', () =>
