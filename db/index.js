@@ -19,7 +19,7 @@ db.ensureIndex({
 	unique: true
 });
 
-module.exports = {
+module.exports = Object.freeze({
 	add: createAdder({
 		createID: createIDGenerator({
 			db,
@@ -31,4 +31,4 @@ module.exports = {
 		hash
 	}),
 	find: createFinder({ db })
-};
+});

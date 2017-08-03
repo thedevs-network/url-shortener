@@ -3,7 +3,7 @@
 const parse = require('./parse');
 const validate = require('./validate');
 
-module.exports = {
+module.exports = Object.freeze({
 	parse,
 	validate
-};
+});
