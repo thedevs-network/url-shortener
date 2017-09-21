@@ -24,10 +24,10 @@ const shorten = url => fetch('/', {
 
 const validate = url => {
 	try {
-		new URL(url);
-		return true;
+		url = new URL(url).href;
+		return { ok: true, url };
 	} catch (err) {
-		return false;
+		return { error: err, ok: false };
 	}
 };
 
@@ -49,8 +49,11 @@ const dom = {
 };
 
 input.addEventListener('input', () =>
-	(submit.disabled = !validate(input.value),
-		submit.textContent = 'Shorten'));
+	(valid => (submit.disabled = !valid.ok,
+		submit.textContent = 'Shorten',
+		valid.ok
+			? dom.result('')
+			: dom.error(valid.error)))(validate(input.value)));
 
 submit.addEventListener('click', () =>
 	submit.textContent === 'Shorten'
