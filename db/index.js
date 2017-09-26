@@ -2,7 +2,7 @@
 
 const MINIMUM_ID_LENGTH = 1;
 
-const { resolve } = require('path');
+const { join } = require('path');
 
 const Datastore = require('nedb-promise');
 
@@ -11,9 +11,11 @@ const createFinder = require('./find');
 const createIDGenerator = require('./id');
 const hash = require('./hash');
 
+const absolute = path => join(__dirname, path);
+
 const db = new Datastore({
 	autoload: true,
-	filename: resolve('links.db')
+	filename: absolute('links.db')
 });
 
 db.ensureIndex({
