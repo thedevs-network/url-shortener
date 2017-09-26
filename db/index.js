@@ -2,6 +2,8 @@
 
 const MINIMUM_ID_LENGTH = 1;
 
+const { resolve } = require('path');
+
 const Datastore = require('nedb-promise');
 
 const createAdder = require('./add');
@@ -11,7 +13,7 @@ const hash = require('./hash');
 
 const db = new Datastore({
 	autoload: true,
-	filename: 'links.db'
+	filename: resolve('links.db')
 });
 
 db.ensureIndex({
