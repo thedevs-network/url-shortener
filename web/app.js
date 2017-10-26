@@ -42,6 +42,9 @@ const dom = {
 		(result.textContent = err.name + ': ' + err.message,
 			result.style.color = 'red',
 			submit.textContent = 'Shorten'),
+	unerror: () =>
+		(result.textContent = '',
+			result.style.color = ''),
 	result: (str) =>
 		(result.textContent = str,
 			result.style.color = '',
@@ -52,7 +55,7 @@ input.addEventListener('input', () =>
 	(valid => (submit.disabled = !valid.ok,
 		submit.textContent = 'Shorten',
 		valid.ok
-			? dom.result('')
+			? dom.unerror()
 			: dom.error(valid.error)))(validate(input.value)));
 
 submit.addEventListener('click', () =>
