@@ -12,19 +12,19 @@ POST to this URL with a URL of your choice as a request body to create a shorten
 
 The server will respond with the ID.
 
-Navigating to https://url.thedevs.network/ID with the given ID will redirect you to the link provided.
+Navigating to https://devs.sh/ID with the given ID will redirect you to the link provided.
 
 Code examples
 -------------
 
 ### cURL
 
-	curl -d "https://example.com/" https://url.thedevs.network/
+	curl -d "https://example.com/" https://devs.sh/
 	D
 
 ### Clientside JavaScript
 
-	fetch('https://url.thedevs.network/', {
+	fetch('https://devs.sh/', {
 		body: 'https://example.com/',
 		method: 'POST'
 	})
@@ -35,9 +35,9 @@ Code examples
 
 ### Node.js
 
-	axios.post('https://url.thedevs.network/',
+	axios.post('https://devs.sh/',
 		"https://example.com/")
 		.then(id =>
 			console.log(id));
 
-Shortening "https://example.com/" your link will be: https://url.thedevs.network/D
+Shortening "https://example.com/" your link will be: https://devs.sh/D
