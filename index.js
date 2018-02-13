@@ -1,7 +1,11 @@
 'use strict';
 
+const { join } = require('path');
+
 const express = require('express');
 const bodyParser = require('body-parser');
+
+const abs = path => join(__dirname, path);
 
 require('./generateMarkup');
 
@@ -12,7 +16,7 @@ const app = express();
 
 app.use(bodyParser.text({ type: '*/*' }));
 
-app.use(express.static('web'));
+app.use(express.static(abs('web')));
 
 app.get('/:id', (req, res) =>
 	find(req.params.id).then(url => url
