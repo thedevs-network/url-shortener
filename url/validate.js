@@ -2,9 +2,15 @@
 
 const { URL } = require('url');
 
-const validate = url => {
+const banned = [
+	'sereyoudom.com.kh'
+];
+
+const validate = urlString => {
 	try {
-		new URL(url);
+		const url = new URL(urlString);
+		if (banned.find(domain => domain.endsWith(url.hostname)))
+			return false;
 		return true;
 	} catch (err) {
 		return false;
