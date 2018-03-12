@@ -2,8 +2,6 @@
 
 const { join } = require('path');
 
-
-const R = require('ramda');
 const Datastore = require('nedb-promise');
 
 const validate = require('./url/validate');
