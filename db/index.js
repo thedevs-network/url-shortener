@@ -4,6 +4,18 @@ const MINIMUM_ID_LENGTH = 1;
 
 const { join } = require('path');
 
+// Snippet grabbed from: https://github.com/thedevs-network/the-guard-bot/blob/e951497c7122c642037084249cf18066fec0a3de/index.js#L4-L11
+{
+	// NeDB on life support
+	// some util methods are removed in node 23.x, monkeypatch them
+	const util = require('util');
+	const patch_methods = [ 'isDate', 'isRegExp' ];
+	for (let i = 0; i < patch_methods.length; i++) {
+		util[patch_methods[i]] = util.types[patch_methods[i]];
+	}
+	util.isArray = Array.isArray;
+}
+
 const Datastore = require('nedb-promise');
 
 const createAdder = require('./add');
